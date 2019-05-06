@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+   xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+     
+     
+   <bean id="empObj" class="comp.spring.SpringCore.Emp">  
+   	<property name="id" value="10"/>
+  	<property name="name" value="David"/>
+   	<property name="city" value="Cleveland"/>
+   </bean>  
+   
+   <bean id="prd" class="com.spring.SpringCore.Product">
+   		<constructor-arg type ="int" value="1001" />
+   </bean> 
+   
+   <bean id="prd2" class="com.spring.SpringCore.Product">
+   		<constructor-arg type="String" value="Laptop" />
+   		<constructor-arg type="int" value="1001" />   
+   </bean>
+   
+   <bean id="room" class="com.spring.SpringCore.Room">   
+   		<constructor-arg type="int" value="007" />
+   		<constructor-arg type="String" value="James Bound" />  
+   </bean>
+   
+   <bean id="build" class="com.spring.SpringCore.Room">
+   		<constructor-arg type="int" value="1001" />
+   		<constructor-arg type="String" value="WTC" />
+   		<constructor-arg>
+   			<ref bean="room"/>
+   		</constructor-arg>
+   </bean>
+               
+               </beans>
